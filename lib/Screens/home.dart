@@ -56,6 +56,18 @@ class _HomeState extends State<Home> {
     'Nameless'
   ];
 
+  List<Color> borderColor = [
+    Colors.blue,
+    Colors.green,
+    Colors.red,
+    Colors.yellow,
+    Colors.orange,
+    Colors.purple,
+    Colors.pink,
+    Colors.brown,
+    Colors.grey
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,13 +124,23 @@ class _HomeState extends State<Home> {
                     margin: const EdgeInsets.all(15.0),
                     padding: const EdgeInsets.all(3.0),
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.blueAccent),
+                      border:
+                          Border.all(color: borderColor[Random().nextInt(8)]),
                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        data['image'] != null && data['image'] != ""
+                            ? Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: Image.network(
+                                  data['image'],
+                                  fit: BoxFit.cover,
+                                ),
+                              )
+                            : Container(),
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 10.0),
                           child: Center(
