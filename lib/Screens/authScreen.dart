@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
+// ignore_for_file: prefer_const_constructors_in_immutables, file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print, use_build_context_synchronously
 
 import "package:flutter/material.dart";
 import 'package:firebase_auth/firebase_auth.dart';
@@ -11,6 +11,7 @@ class Auth extends StatefulWidget {
   Auth({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _AuthState createState() => _AuthState();
 }
 

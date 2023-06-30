@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print, sized_box_for_whitespace, deprecated_member_use, prefer_typing_uninitialized_variables, unused_catch_clause, nullable_type_in_catch_clause
+// ignore_for_file: prefer_const_constructors_in_immutables, file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print, sized_box_for_whitespace, deprecated_member_use, prefer_typing_uninitialized_variables, unused_catch_clause, nullable_type_in_catch_clause, use_build_context_synchronously
 import 'dart:io';
 import "package:flutter/material.dart";
 import 'package:fluttertoast/fluttertoast.dart';
@@ -118,7 +118,7 @@ class _PostDataFromMindState extends State<PostDataFromMind> {
                           icon: Icon(Icons.camera),
                           onPressed: () {
                             _picker
-                                .getImage(source: ImageSource.gallery)
+                                .pickImage(source: ImageSource.gallery)
                                 .then((file) {
                               setState(() {
                                 image = file!.path;

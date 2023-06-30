@@ -2,6 +2,7 @@
 import 'dart:math';
 import "package:flutter/material.dart";
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:mind/Screens/chatHome.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import "./post.dart";
 import "./authScreen.dart";
@@ -10,6 +11,7 @@ class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomeState createState() => _HomeState();
 }
 
@@ -27,7 +29,7 @@ class _HomeState extends State<Home> {
     prefs.then((prefs) {
       setState(() {
         uid = prefs.getString('userId').toString();
-        print("userId is " + uid);
+        print("userId is $uid");
       });
     });
   }
@@ -82,6 +84,13 @@ class _HomeState extends State<Home> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => PostDataFromMind()));
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.chat),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ChatHome()));
               },
             ),
             IconButton(
@@ -166,8 +175,7 @@ class _HomeState extends State<Home> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    "Posted by: " +
-                                        poster[Random().nextInt(poster.length)],
+                                    "Posted by: ${poster[Random().nextInt(poster.length)]}",
                                     style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.grey,

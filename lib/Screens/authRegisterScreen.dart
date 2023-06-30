@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
+// ignore_for_file: prefer_const_constructors_in_immutables, file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print, use_build_context_synchronously, unused_local_variable
 
 import "package:flutter/material.dart";
 import 'package:fluttertoast/fluttertoast.dart';
@@ -109,179 +109,175 @@ class _AuthRegisterScreenState extends State<AuthRegisterScreen> {
           backgroundColor: Colors.grey.shade800,
         ),
         body: SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints:
-                BoxConstraints.tightFor(height: (height * 1.1).toDouble()),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                  child: Text(
-                    "Name",
-                    style: TextStyle(fontSize: 25, color: Colors.white),
-                  ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 60, 0, 0),
+                child: Text(
+                  "Name",
+                  style: TextStyle(fontSize: 25, color: Colors.white),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: "Name",
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade200),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade500),
-                      ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Name",
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200),
                     ),
-                    onChanged: (value) {
-                      setState(() {
-                        name = value;
-                      });
-                    },
-                  ),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                  child: Text(
-                    "Age",
-                    style: TextStyle(fontSize: 25, color: Colors.white),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: "Age",
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade200),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade500),
-                      ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade500),
                     ),
-                    onChanged: (value) {
-                      setState(() {
-                        age = value;
-                      });
-                    },
                   ),
+                  onChanged: (value) {
+                    setState(() {
+                      name = value;
+                    });
+                  },
                 ),
-                SizedBox(
-                  height: 25,
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                child: Text(
+                  "Age",
+                  style: TextStyle(fontSize: 25, color: Colors.white),
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                  child: Text(
-                    "Email",
-                    style: TextStyle(fontSize: 25, color: Colors.white),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: "Email",
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade200),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade500),
-                      ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Age",
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200),
                     ),
-                    onChanged: (value) {
-                      setState(() {
-                        email = value;
-                      });
-                    },
-                  ),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                  child: Text(
-                    "Password",
-                    style: TextStyle(fontSize: 25, color: Colors.white),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: "Password",
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade200),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade500),
-                      ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade500),
                     ),
-                    obscureText: true,
-                    enableSuggestions: false,
-                    autocorrect: false,
-                    onChanged: (value) {
-                      setState(() {
-                        password = value;
-                      });
-                    },
                   ),
+                  onChanged: (value) {
+                    setState(() {
+                      age = value;
+                    });
+                  },
                 ),
-                SizedBox(
-                  height: 20,
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                child: Text(
+                  "Email",
+                  style: TextStyle(fontSize: 25, color: Colors.white),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      firebaseRegister();
-                    },
-                    child: Text("Register"),
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Have An Account ? ",
-                      style: TextStyle(fontSize: 15),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Email",
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200),
                     ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Auth()));
-                      },
-                      child: Text(
-                        "Login",
-                        style: TextStyle(
-                            fontSize: 15, color: Colors.grey.shade700),
-                      ),
-                    )
-                  ],
-                )
-              ],
-            ), // your column
-          ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade500),
+                    ),
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      email = value;
+                    });
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                child: Text(
+                  "Password",
+                  style: TextStyle(fontSize: 25, color: Colors.white),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Password",
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade200),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey.shade500),
+                    ),
+                  ),
+                  obscureText: true,
+                  enableSuggestions: false,
+                  autocorrect: false,
+                  onChanged: (value) {
+                    setState(() {
+                      password = value;
+                    });
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: ElevatedButton(
+                  onPressed: () {
+                    firebaseRegister();
+                  },
+                  child: Text("Register"),
+                ),
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Have An Account ? ",
+                    style: TextStyle(fontSize: 15),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Auth()));
+                    },
+                    child: Text(
+                      "Login",
+                      style:
+                          TextStyle(fontSize: 15, color: Colors.grey.shade700),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ), // your column
         ));
   }
 }
